@@ -16,7 +16,7 @@ public class Kantalukija {
 
     public void haeKayttajanTunnit(int kayttajaid, String alku, String loppu) throws SQLException {
         String sql = "Select kayttajaid, kayttajat.sukunimi, paivamaara, minuutit, tehtavakuvaus, laskutettava from tuntienkirjaus join kayttajat on kayttajat.id = kayttajaid where kayttajaid=? and paivamaara<? and paivamaara>?";
-        System.out.println("testi");
+//        System.out.println("testi");
         PreparedStatement lause = con.prepareStatement(sql);
         lause.setInt(1, kayttajaid);
         lause.setString(2,loppu);
@@ -27,7 +27,7 @@ public class Kantalukija {
 
     public void haeKayttajanTunnit(String alku, String loppu) throws SQLException {
         String sql = "Select kayttajaid, kayttajat.sukunimi, paivamaara, minuutit, tehtavakuvaus, laskutettava from tuntienkirjaus join kayttajat on kayttajat.id = kayttajaid where paivamaara<? and paivamaara>?";
-        System.out.println("testi");
+//        System.out.println("testi");
         PreparedStatement lause = con.prepareStatement(sql);
         lause.setString(1,loppu);
         lause.setString(2,alku);
@@ -37,7 +37,7 @@ public class Kantalukija {
 
     public void haeKayttajanTunnit(int kayttajaid) throws SQLException {
         String sql = "Select kayttajaid, kayttajat.sukunimi, paivamaara, minuutit, tehtavakuvaus, laskutettava from tuntienkirjaus join kayttajat on kayttajat.id = kayttajaid where kayttajaid=?";
-        System.out.println("testi");
+//        System.out.println("testi");
         PreparedStatement lause = con.prepareStatement(sql);
         lause.setInt(1, kayttajaid);
         ResultSet rs = lause.executeQuery();
